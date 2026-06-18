@@ -1,0 +1,18 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("titanic_cleaned.csv")
+
+sns.countplot(x='Survived', data=df)
+
+plt.title("Survival Count")
+plt.show()
+sns.countplot(x='Sex', hue='Survived', data=df)
+
+plt.title("Survival by Gender")
+plt.show()
+plt.hist(df['Age'], bins=20)
+
+plt.title("Age Distribution")
+plt.show()
